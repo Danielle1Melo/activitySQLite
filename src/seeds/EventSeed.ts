@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 import { Event } from "../models/EventModels"
-import { createEvent } from "../controllers/EventController"
+import { eventInsert } from "../controllers/EventController"
 import { listAllUsers } from "../services/UserService"
 
 export async function createEventSeeds() {
@@ -22,7 +22,7 @@ export async function createEventSeeds() {
                 userID: userId
             }
 
-            await createEvent(event.name, event.date, event.userID)
+            await eventInsert(event.name, event.date, event.userID)
         }
     } catch (error) {
         console.log(`error inserting event: ${error}}`)

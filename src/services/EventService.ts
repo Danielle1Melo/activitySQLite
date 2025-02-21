@@ -9,7 +9,7 @@ export function createTableEvent(): Promise<boolean> {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             date TEXT,
-            userID INTEGER
+            userID INTEGER,
             FOREIGN KEY (userID) REFERENCES user(id)
         );
     `;
